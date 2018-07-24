@@ -1,4 +1,4 @@
-# PPDAI Magic Mirror Data Application Contest
+# QDD_Net: Duplicate Question Detector 
 
 ## Introduction
 This is the repository for [PPDAI](https://ai.ppdai.com/mirror/goToMirrorDetail?mirrorId=1&tabindex=2) contest, which is a natural language processing (NLP) model aims to detect duplicate questions in Chinese. 
@@ -16,12 +16,16 @@ We proposed three models including a RNN based model, CNN based model and a RCNN
 4. Self-Attention was used to enhance the feature representation.
 5. Word embedding and Character Embedding were used simultaneously.
 
+An overview of the our QDD_Net architecture:
+
+![test](res/test.png)
+
 ## Performance:
 Our ensemble model achieved 0.203930 of loss in the semi-final, at the top 15% in ranking.
 
 ## Reference
 [QANet: Combining Local Convolution with Global Self-Attention for Reading Comprehension[ICLR 2018]](https://arxiv.org/abs/1804.09541)  
-  
+
 [Zhouhan Lin et al. “A Structured Self-attentive Sentence Embedding”. In:CoRRabs/1703.03130 (2017).arXiv:1703.03130.](http://arxiv.org/abs/1703.03130.)  
 
 [ Pranav Rajpurkar et al. “SQuAD: 100, 000+ Questions for Machine Comprehension of Text”. In:CoRRabs/1606.05250 (2016). arXiv:1606.05250.](http://arxiv.org/abs/1606.05250.)  
