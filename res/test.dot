@@ -1,5 +1,7 @@
 digraph G {
 
+  # graph [pad="0.5", nodesep="0.5", ranksep="0.5"];
+
   subgraph cluster_0 {
     style=filled;
     color=lightgrey;
@@ -7,8 +9,6 @@ digraph G {
     char_1 [label="character", style=filled,color=white, shape=box];
 
     label = "Question 1";
-
-
   }
 
   subgraph cluster_1 {
@@ -23,43 +23,35 @@ digraph G {
   subgraph cluster_word_enc {
     style=filled;
     color=lightgrey;
-    word_encoder [label="word encoder block \n (biRNN)", style=filled, color=white, shape=box];
+    word_encoder [label="word encoder block \n (biRNN)", fixedsize=true, width=2, style=filled, color=white, shape=box];
     word_1 -> word_encoder
     word_2 -> word_encoder
+
+    word_att [label="Question 1&2 \n word attention", fixedsize=true, width=2, style=filled, color=white, shape=box];
+    word_encoder -> word_att
+
+    self_word_att [label="self-attention", fixedsize=true, width=2, style=filled, color=white, shape=box];
+    word_att -> self_word_att
   }
 
   subgraph cluster_char_enc {
     style=filled;
     color=lightgrey;
-    char_encoder [label="char encoder block \n (biRNN)", style=filled, color=white, shape=box];
+    char_encoder [label="char encoder block \n (biRNN)", fixedsize=true, width=2, style=filled, color=white, shape=box];
     char_1 -> char_encoder
     char_2 -> char_encoder
-  }
 
-  subgraph cluster_word_attention {
-    style=filled;
-    color=lightgrey;
-    word_att [label="Question 1&2 \n word attention", style=filled, color=white, shape=box];
-    word_encoder -> word_att
-
-    self_word_att [label="self-attention", style=filled, color=white, shape=box];
-    word_att -> self_word_att
-  }
-
-  subgraph cluster_char_attention {
-    style=filled;
-    color=lightgrey;
-    char_att [label="Question 1&2 \n char attention", style=filled, color=white, shape=box];
+    char_att [label="Question 1&2 \n char attention", fixedsize=true, width=2, style=filled, color=white, shape=box];
     char_encoder -> char_att
 
-    self_char_att [label="self-attention", style=filled, color=white, shape=box];
+    self_char_att [label="self-attention", fixedsize=true, width=2, style=filled, color=white, shape=box];
     char_att -> self_char_att
   }
 
   subgraph cluster_w_dot_attention {
     style=filled;
     color=lightgrey;
-    w_dot_att [label="word against char \n dot attention", style=filled, color=white, shape=box];
+    w_dot_att [label="word against char \n dot attention", fixedsize=true, width=2, style=filled, color=white, shape=box];
     self_char_att -> w_dot_att
     self_word_att -> w_dot_att
   }
@@ -67,28 +59,27 @@ digraph G {
   subgraph cluster_c_dot_attention {
     style=filled;
     color=lightgrey;
-    c_dot_att [label="char against word \n dot attention", style=filled, color=white, shape=box];
+    c_dot_att [label="char against word \n dot attention", fixedsize=true, width=2, style=filled, color=white, shape=box];
     self_char_att -> c_dot_att
     self_word_att -> c_dot_att
   }
 
   subgraph cluster_out {
-    graph [pad="0.1", nodesep="0.1", ranksep="0.1"];
 
     style=filled;
     color=lightgrey;
-    concate [label="concate", style=filled, color=white, shape=box];
+    concate [label="concate", fixedsize=true, width=2, style=filled, color=white, shape=box];
     w_dot_att -> concate
     c_dot_att -> concate
 
-    dl [label="dense layer", style=filled, color=white, shape=box];
+    dl [label="dense layer", fixedsize=true, width=2, style=filled, color=white, shape=box];
     concate -> dl
 
-    softmax [label="softmax", style=filled, color=white, shape=box];
+    softmax [label="softmax", fixedsize=true, width=2, style=filled, color=white, shape=box];
     dl -> softmax
   }
 
-  output [label="Output \n Prob (Similarity)", style=filled, shape=box];
+  output [label="Output \n Prob (Similarity)", fixedsize=true, width=2, style=filled, shape=box];
   softmax -> output
 
 }
