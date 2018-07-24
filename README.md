@@ -18,7 +18,9 @@ We proposed three models including a RNN based model, CNN based model and a RCNN
 
 An overview of the our QDD_Net architecture:
 
+<div align=center>
 ![test](res/test.png)
+</div>
 
 ## Performance:
 Our ensemble model achieved 0.203930 of loss in the semi-final, at the top 15% in ranking.
