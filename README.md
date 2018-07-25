@@ -1,11 +1,11 @@
 # QDD_Net: Duplicate Question Detector 
 
 ## Introduction
-We propose the **QDD_Net**, which is used for duplicate question detection.
+We propose the **QDD_Net**, which is used for duplicate question detection.  
 Our model achieves a good performance in [PPDAI Magic Mirror Data Application Contest](https://ai.ppdai.com/mirror/goToMirrorDetail?mirrorId=1&tabindex=2).
 
 ## Data
-Data should be pairs of questions labeled with 0 and 1 represents similar or not.
+Data should be pairs of questions labeled with 0 and 1 represents similar or not.  
 Word & Character embedding should be provided respectively for representing the question sequences.
 
 ## Model
