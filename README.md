@@ -1,8 +1,8 @@
 # QDD_Net: Duplicate Question Detector 
 
 ## Introduction
-We proposed the QDD_Net which is used for duplicate question detection.
-Our model had a good performance in [PPDAI Magic Mirror Data Application Contest](https://ai.ppdai.com/mirror/goToMirrorDetail?mirrorId=1&tabindex=2) 
+We propose the **QDD_Net**, which is used for duplicate question detection.
+Our model achieves a good performance in [PPDAI Magic Mirror Data Application Contest](https://ai.ppdai.com/mirror/goToMirrorDetail?mirrorId=1&tabindex=2).
 
 ## Data
 Data should be pairs of questions labeled with 0 and 1 represents similar or not.
@@ -22,7 +22,7 @@ We proposed three models including a RNN based model, CNN based model and a RCNN
 ![test](res/arch_img.jpg)
 
 ## Performance:
-Our ensemble model achieved 0.203930 of loss in PPDAI contest, at the top 15% in ranking.
+The ensemble model achieved 0.203930 for similarity loss in PPDAI contest, at the top 15% in ranking.
 
 ## Reference
 [QANet: Combining Local Convolution with Global Self-Attention for Reading Comprehension[ICLR 2018]](https://arxiv.org/abs/1804.09541)  
